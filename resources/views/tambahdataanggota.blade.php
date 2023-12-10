@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Data Buku</title>
+    <title>Tambah Data Anggota</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -70,14 +70,16 @@
 
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
+
         @include('sidebar')
+        </ul>
 
     </aside><!-- End Sidebar-->
 
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Data Buku</h1>
+            <h1>Tambah Data Anggota</h1>
         </div><!-- End Page Title -->
 
         <section class="section dashboard">
@@ -86,50 +88,50 @@
                 <!-- Left side columns -->
                 <div class="">
                     <div class="">
-                        <p class="card-text"><a href="{{ route('tambah-data-buku') }}"
-                                class="btn btn-primary">Tambah</a></p>
                         <!-- Primary Color Bordered Table -->
-
+                        <!-- No Labels Form -->
                         <div class="card">
                             <div class="card-body">
+                                <form class="row g-3" action="{{ route('simpan-data-anggota') }}" method="POST"
+                                    enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+                                    <h5 class="card-title"></h5>
 
-                                <h5 class="card-title">Tabel Data Buku</h5>
+                                    <!-- No Labels Form -->
 
-                                <table class="table table-bordered border-primary">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">No</th>
-                                            <th scope="col">Judul</th>
-                                            <th scope="col">Pengarang</th>
-                                            <th scope="col">Kategori</th>
-                                            <th scope="col">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    @php
-                                        $no = 1;
+                                    <div class="col-md-12">
+                                        <label for="basicInput">Nim</label>
+                                        <input type="text" class="form-control" placeholder="Nomor Induk Mahasiswa"
+                                            name="nim" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="basicInput">Nama</label>
+                                        <input type="text" class="form-control" placeholder="Nama" name="nama"
+                                            required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="basicInput">Prodi</label>
+                                        <select id="inputState" class="form-select" name="prodi" required>
+                                            <option selected>Prodi</option>
+                                            <option>Teknik Informatika</option>
+                                            <option>Sistem Informasi</option>
+                                            <option>Ilmu Komunikasi</option>
+                                        </select>
+                                    </div>
+                                    <div class="text-right">
+                                        <button class="btn btn-secondary me-1 mb-1"><a style="color:white;"
+                                                href="/data-anggota">Kembali</a></button>
+                                        <button type="submit" class="btn btn-primary me-1 mb-1">
+                                            Submit
+                                        </button>
 
-                                    @endphp
-                                    @foreach ($data as $d)
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $d['judul'] }}</td>
-                                                <td>{{ $d['pengarang'] }}</td>
-                                                <td>{{ $d['kategori'] }}</td>
-                                                <td>
-                                                    <p class="card-text"><a href="{{ url('edit-data-buku', $d->id) }}"
-                                                            class="btn btn-warning">Edit</a>
-                                                        <a href="{{ url('delete-data-buku', $d->id) }}"
-                                                            class="btn btn-danger">Delete</a>
-                                                </td>
-                                            </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                                <!-- End Primary Color Bordered Table -->
+                                    </div>
+                                </form><!-- End No Labels Form -->
 
                             </div>
                         </div>
+                        <!-- End Primary Color Bordered Table -->
+
 
                     </div>
                 </div><!-- End Left side columns -->

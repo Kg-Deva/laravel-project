@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Data Buku</title>
+    <title>Data Anggota</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -77,7 +77,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Data Buku</h1>
+            <h1>Data Anggota</h1>
         </div><!-- End Page Title -->
 
         <section class="section dashboard">
@@ -86,22 +86,22 @@
                 <!-- Left side columns -->
                 <div class="">
                     <div class="">
-                        <p class="card-text"><a href="{{ route('tambah-data-buku') }}"
+                        <p class="card-text"><a href="{{ route('tambah-data-anggota') }}"
                                 class="btn btn-primary">Tambah</a></p>
                         <!-- Primary Color Bordered Table -->
 
                         <div class="card">
                             <div class="card-body">
 
-                                <h5 class="card-title">Tabel Data Buku</h5>
+                                <h5 class="card-title">Tabel Data Anggota</h5>
 
                                 <table class="table table-bordered border-primary">
                                     <thead>
                                         <tr>
                                             <th scope="col">No</th>
-                                            <th scope="col">Judul</th>
-                                            <th scope="col">Pengarang</th>
-                                            <th scope="col">Kategori</th>
+                                            <th scope="col">Nim</th>
+                                            <th scope="col">Nama</th>
+                                            <th scope="col">Prodi</th>
                                             <th scope="col">Actions</th>
                                         </tr>
                                     </thead>
@@ -113,13 +113,14 @@
                                         <tbody>
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $d['judul'] }}</td>
-                                                <td>{{ $d['pengarang'] }}</td>
-                                                <td>{{ $d['kategori'] }}</td>
+                                                <td>{{ $d['nim'] }}</td>
+                                                <td>{{ $d['nama'] }}</td>
+                                                <td>{{ $d['prodi'] }}</td>
                                                 <td>
-                                                    <p class="card-text"><a href="{{ url('edit-data-buku', $d->id) }}"
+                                                    <p class="card-text"><a
+                                                            href="{{ url('edit-data-anggota', $d->id) }}"
                                                             class="btn btn-warning">Edit</a>
-                                                        <a href="{{ url('delete-data-buku', $d->id) }}"
+                                                        <a href="{{ url('delete-data-anggota', $d->id) }}"
                                                             class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>

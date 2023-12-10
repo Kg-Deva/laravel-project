@@ -71,35 +71,7 @@
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
 
-        <ul class="sidebar-nav" id="sidebar-nav">
-
-            <li class="nav-item">
-                <a class="nav-link " href="/data-buku">
-                    <i class="bi bi-journal-album"></i>
-                    <span>Data Buku</span>
-                </a>
-            </li><!-- End Data Buku Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link " href="index.html">
-                    <i class="bi bi-person-lines-fill"></i>
-                    <span>Data Anggota</span>
-                </a>
-            </li><!-- End Data Anggota Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link " href="index.html">
-                    <i class="bi bi-kanban-fill"></i>
-                    <span>Transaksi Pinjam</span>
-                </a>
-            </li><!-- End Transaksi Pinjam Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link " href="index.html">
-                    <i class="bi bi-box-arrow-left"></i>
-                    <span>Logout</span>
-                </a>
-            </li><!-- End Logout Nav -->
+        @include('sidebar')
         </ul>
 
     </aside><!-- End Sidebar-->
@@ -129,17 +101,18 @@
 
                                     <div class="col-md-12">
                                         <label for="basicInput">Judul</label>
-                                        <input type="text" class="form-control" placeholder="Judul" name="judul">
+                                        <input type="text" class="form-control" placeholder="Judul" name="judul"
+                                            required>
                                     </div>
                                     <div class="col-md-12">
                                         <label for="basicInput">Pengarang</label>
 
                                         <input type="text" class="form-control" placeholder="Pengarang"
-                                            name="pengarang">
+                                            name="pengarang" required>
                                     </div>
                                     <div class="col-md-12">
                                         <label for="basicInput">Kategori</label>
-                                        <select id="inputState" class="form-select" name="kategori">
+                                        <select id="inputState" class="form-select" name="kategori" required>
                                             <option selected>Kategori</option>
                                             <option>Novel</option>
                                             <option>Komik</option>

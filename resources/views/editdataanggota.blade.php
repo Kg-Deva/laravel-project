@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Edit Data Buku</title>
+    <title>Edit Data Anggota</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -80,7 +80,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Edit Data Buku</h1>
+            <h1>Edit Data Anggota</h1>
         </div><!-- End Page Title -->
 
         <section class="section dashboard">
@@ -93,38 +93,36 @@
                         <!-- No Labels Form -->
                         <div class="card">
                             <div class="card-body">
-                                <form class="row g-3" action="{{ url('update-data-buku', $data->id) }}" method="POST"
-                                    enctype="multipart/form-data">
+                                <form class="row g-3" action="{{ url('update-data-anggota', $data->id) }}"
+                                    method="POST" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <h5 class="card-title"></h5>
 
                                     <!-- No Labels Form -->
 
                                     <div class="col-md-12">
-                                        <label for="basicInput">Judul</label>
-                                        <input type="text" class="form-control" placeholder="Judul" name="judul"
-                                            value="{{ $data->judul }}" required>
+                                        <label for="basicInput">Nim</label>
+                                        <input type="text" class="form-control" placeholder="Nomor Induk Mahasiswa"
+                                            name="nim" value="{{ $data->nim }}" required>
                                     </div>
                                     <div class="col-md-12">
-                                        <label for="basicInput">Pengarang</label>
-
-                                        <input type="text" class="form-control" placeholder="Pengarang"
-                                            name="pengarang" value="{{ $data->pengarang }}" required>
+                                        <label for="basicInput">Nama</label>
+                                        <input type="text" class="form-control" placeholder="Nama" name="nama"
+                                            value="{{ $data->nama }}" required>
                                     </div>
                                     <div class="col-md-12">
                                         <label for="basicInput">Kategori</label>
-                                        <select id="inputState" class="form-select" name="kategori"
-                                            value="{{ $data->kategori }}" required>
-                                            <option selected>Kategori</option>
-                                            <option>Novel</option>
-                                            <option>Komik</option>
-                                            <option>Kamus</option>
-                                            <option>Pemrograman</option>
+                                        <select id="inputState" class="form-select" name="prodi"
+                                            value="{{ $data->Prodi }}" required>
+                                            <option selected>Prodi</option>
+                                            <option>Teknik Informatika</option>
+                                            <option>Sistem Informasi</option>
+                                            <option>Ilmu Komunikasi</option>
                                         </select>
                                     </div>
                                     <div class="text-right">
                                         <button class="btn btn-secondary me-1 mb-1"><a style="color:white;"
-                                                href="/data-buku">Kembali</a></button>
+                                                href="/data-anggota">Kembali</a></button>
                                         <button type="submit" class="btn btn-primary me-1 mb-1">
                                             Update
                                         </button>
