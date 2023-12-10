@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Edit Data Buku</title>
+    <title>Edit Data Transaksi</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -80,7 +80,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Edit Data Buku</h1>
+            <h1>Edit Data Transaksi</h1>
         </div><!-- End Page Title -->
 
         <section class="section dashboard">
@@ -93,37 +93,50 @@
                         <!-- No Labels Form -->
                         <div class="card">
                             <div class="card-body">
-                                <form class="row g-3" action="{{ url('update-data-buku', $data->id) }}" method="POST"
-                                    enctype="multipart/form-data">
+                                <form class="row g-3" action="{{ url('update-data-transaksi', $data->id) }}"
+                                    method="POST" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <h5 class="card-title"></h5>
 
                                     <!-- No Labels Form -->
 
                                     <div class="col-md-12">
-                                        <label for="basicInput">Judul</label>
-                                        <input type="text" class="form-control" placeholder="Judul" name="judul"
-                                            value="{{ $data->judul }}" required>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label for="basicInput">Pengarang</label>
-
-                                        <input type="text" class="form-control" placeholder="Pengarang"
-                                            name="pengarang" value="{{ $data->pengarang }}" required>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label for="basicInput">Kategori</label>
-                                        <select id="inputState" class="form-select" name="kategori" required>
-                                            <option value="">Kategori</option>
-
-                                            @foreach ($data as $item)
-                                                <option value="{{ $data->kategori }}">{ $data->kategori }}</option>
+                                        <label for="basicInput">Anggota</label>
+                                        <select id="inputState" class="form-select" name="ID_Anggota" required>
+                                            @foreach ($anggota as $ang)
+                                                <option value=" {{ $ang->nim . ' - ' . $ang->nama }}"
+                                                    {{ $ang ? ($ang->id == $ang->id ? 'selected' : '') : '' }}>
+                                                    {{ $ang->nim . ' - ' . $ang->nama }}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
+                                    <div class="col-md-12">
+                                        <label for="basicInput">Buku</label>
+                                        <select id="inputState" class="form-select" name="buku" required>
+                                            @foreach ($buku as $ang)
+                                                <option value=" {{ $ang->judul . ' - ' . $ang->pengarang }}"
+                                                    {{ $ang ? ($ang->id == $ang->id ? 'selected' : '') : '' }}>
+                                                    {{ $ang->judul . ' - ' . $ang->pengarang }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="basicInput">Tanggal Pinjam</label>
+                                        <input type="date" name="tgl_pinjam" placeholder="dd-mm-yyyy"
+                                            value="{{ $data->tgl_pinjam }}" min="1997-01-01" max="2030-12-31"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="basicInput">Tanggal Kembali</label>
+                                        <input type="date" name="tgl_kembali" placeholder="dd-mm-yyyy"
+                                            value="{{ $data->tgl_kembali }}" min="1997-01-01" max="2030-12-31"
+                                            class="form-control">
+                                    </div>
                                     <div class="text-right">
                                         <button class="btn btn-secondary me-1 mb-1"><a style="color:white;"
-                                                href="/data-buku">Kembali</a></button>
+                                                href="/data-transaksi">Kembali</a></button>
                                         <button type="submit" class="btn btn-primary me-1 mb-1">
                                             Update
                                         </button>

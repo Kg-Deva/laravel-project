@@ -15,7 +15,7 @@
     </li><!-- End Data Anggota Nav -->
 
     <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="/data-transaksi">
             <i class="bi bi-kanban-fill"></i>
             <span>Transaksi Pinjam</span>
         </a>

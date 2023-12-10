@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+
 
 class DataAnggota extends Model
 {
@@ -17,5 +19,19 @@ class DataAnggota extends Model
         'nama' ,
         'prodi'
     ];
+
+    // public function transaksi(){
+    //     return $this->belongsTo(DataTransaksi::class, 'ID_Anggota');
+    // }
+
+    public function getByIdPerusahaan()
+    {
+        return $this->where('id', Auth::user()->id)->get();
+    }
+
+    public function transaksi()
+    {
+        return $this->hasOne(DataTransaksi::class, 'ID_Anggota', 'id');
+    }
 }
 
