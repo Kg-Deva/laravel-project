@@ -15,14 +15,14 @@
     </li><!-- End Data Anggota Nav -->
 
     <li class="nav-item">
-        <a class="nav-link " href="/data-transaksi">
+        <a class="nav-link " href="/data-pinjam">
             <i class="bi bi-kanban-fill"></i>
             <span>Transaksi Pinjam</span>
         </a>
     </li><!-- End Transaksi Pinjam Nav -->
 
     <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="/logout">
             <i class="bi bi-box-arrow-left"></i>
             <span>Logout</span>
         </a>

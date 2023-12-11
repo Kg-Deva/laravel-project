@@ -47,7 +47,7 @@ class DataTransaksiController extends Controller
         
         DataTransaksi::create($request->all());
 
-        return redirect('data-transaksi');
+        return redirect('data-pinjam');
     
 
     }
@@ -76,7 +76,7 @@ class DataTransaksiController extends Controller
         ]);
         $data->update($validateData);
       
-        return redirect('data-transaksi');
+        return redirect('data-pinjam');
     }
     public function destroy($id)
     {
