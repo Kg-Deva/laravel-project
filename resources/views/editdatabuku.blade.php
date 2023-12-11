@@ -11,7 +11,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ url('assets/img/favicon.png') }}" rel="icon">
+    <link href="{{ url('assets/img/logocreative.png') }}" rel="icon">
     <link href="{{ url('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -45,30 +45,8 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center">
-
-        <div class="d-flex align-items-center justify-content-between">
-            <a href="/perpus" class="logo d-flex align-items-center">
-                <img src="{{ url('assets/img/logo.png') }}" alt="">
-                <span class="d-none d-lg-block">My Perpus</span>
-            </a>
-            <i class="bi bi-list toggle-sidebar-btn"></i>
-        </div><!-- End Logo -->
-
-
-        <nav class="header-nav ms-auto">
-            <ul class="d-flex align-items-center">
-                <li class="nav-item dropdown pe-3">
-                    <a class="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown">
-                        <img src="{{ url('assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
-                        &ensp; <span> Nanda Veri Febriansyah</span>
-                    </a><!-- End Profile Iamge Icon -->
-                </li><!-- End Profile Nav -->
-
-            </ul>
-        </nav><!-- End Icons Navigation -->
-
-    </header><!-- End Header -->
+    @include('header')
+    <!-- End Header -->
 
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
@@ -107,18 +85,19 @@
                                     </div>
                                     <div class="col-md-12">
                                         <label for="basicInput">Pengarang</label>
-
                                         <input type="text" class="form-control" placeholder="Pengarang"
                                             name="pengarang" value="{{ $data->pengarang }}" required>
                                     </div>
                                     <div class="col-md-12">
                                         <label for="basicInput">Kategori</label>
+                                        <input type="text" class="form-control" value="{{ $data->kategori }}"
+                                            readonly disabled>
+                                        <a style="font-size: 80%"><b>*Pilih Dibawah</a>
                                         <select id="inputState" class="form-select" name="kategori" required>
-                                            <option value="">Kategori</option>
-
-                                            @foreach ($data as $item)
-                                                <option value="{{ $data->kategori }}">{ $data->kategori }}</option>
-                                            @endforeach
+                                            <option>Novel</option>
+                                            <option>Komik</option>
+                                            <option>Kamus</option>
+                                            <option>Pemrograman</option>
                                         </select>
                                     </div>
                                     <div class="text-right">

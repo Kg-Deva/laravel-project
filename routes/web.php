@@ -17,13 +17,6 @@ use App\Http\Controllers\DataLoginController;
 |
 */
 
-// Route::get('/perpus', function () {
-//     return view('dashboard');
-// });
-
-Route::get('/', function () {
-    return view('login');
-});
 //login
 Route::get('/login', [DataLoginController::class, 'index'])->name('login');
 Route::post('/postlogin', [DataLoginController::class, 'postlogin'])->name('postlogin');
@@ -32,6 +25,10 @@ Route::get('/logout', [DataLoginController::class, 'logout'])->name('logout');
 Route::group(['middleware' => ['auth']], function () {
     //dashboard
     Route::get('/perpus', function () {
+        return view('dashboard');
+    });
+
+    Route::get('/', function () {
         return view('dashboard');
     });
 

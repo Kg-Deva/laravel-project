@@ -39,10 +39,13 @@ class DataBukuController extends Controller
 
     public function edit($id)
     {
+        // $data = DataBuku::findorfail($id);
+        // return view('editdatabuku', compact('data'));
         $data = DataBuku::findorfail($id);
-        return view('editdatabuku', compact('data'));
-        // return view('admin.edit', ['No' => $data]);
-    }
+        return view('editdatabuku', compact('data'), [
+            'buku' => DataBuku::get(),
+           
+        ]);    }
 
     public function update(Request $request, $id)
     {
