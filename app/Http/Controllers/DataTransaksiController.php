@@ -16,14 +16,15 @@ class DataTransaksiController extends Controller
      */
     public function index()
     {
-        // $data = DataTransaksi::all();
-        // return view('datatransaksi', compact('data'));
-        return view('datatransaksi', [
-          
+      
+        $data = DataTransaksi::paginate(5);
+        return view('datatransaksi',compact('data'),[
+      
             'anggota' => DataAnggota::get(),
             'transaksi' => DataTransaksi::get(),
             'buku' => DataBuku::get(),
            
+            
         ]);
     }
 
@@ -55,7 +56,6 @@ class DataTransaksiController extends Controller
     public function edit($id)
     {
         $data = DataTransaksi::findorfail($id);
-        // return view('editdatatransaksi', compact('data'));
         return view('editdatatransaksi', compact('data'), [
           
             'anggota' => DataAnggota::get(),
@@ -83,6 +83,5 @@ class DataTransaksiController extends Controller
         $data = DataTransaksi::findorfail($id);
         $data->delete();
         return back();
-        // return redirect('data-user')->with('success', 'Data Berhasil Diupdate');
     }
 }

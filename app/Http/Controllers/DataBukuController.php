@@ -12,7 +12,7 @@ class DataBukuController extends Controller
      */
     public function index()
     {
-        $data = DataBuku::all();
+        $data = DataBuku::paginate(5);
         return view('databuku', compact('data'));
     }
 

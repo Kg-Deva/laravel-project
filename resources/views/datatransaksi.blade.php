@@ -85,13 +85,13 @@
                                         </tr>
                                     </thead>
                                     @php
-                                        $no = 1;
+                                        $no = 0;
 
                                     @endphp
-                                    @foreach ($transaksi as $d)
+                                    @foreach ($data as $d)
                                         <tbody>
                                             <tr>
-                                                <th scope="row">{{ $no++ }}</th>
+                                                <th scope="row">{{ $data->firstitem() + $no++ }}</th>
                                                 <td>{{ $d['ID_Anggota'] }}</td>
                                                 <td>{{ $d['buku'] }}</td>
                                                 <td>{{ $d['tgl_pinjam'] }}</td>
@@ -109,7 +109,7 @@
                                     </tbody>
                                 </table>
                                 <!-- End Primary Color Bordered Table -->
-
+                                {{ $data->links() }}
                             </div>
                         </div>
 

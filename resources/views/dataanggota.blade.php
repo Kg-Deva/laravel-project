@@ -84,13 +84,13 @@
                                         </tr>
                                     </thead>
                                     @php
-                                        $no = 1;
+                                        $no = 0;
 
                                     @endphp
                                     @foreach ($data as $d)
                                         <tbody>
                                             <tr>
-                                                <th scope="row">{{ $no++ }}</th>
+                                                <th scope="row">{{ $data->firstitem() + $no++ }}</th>
                                                 <td>{{ $d['nim'] }}</td>
                                                 <td>{{ $d['nama'] }}</td>
                                                 <td>{{ $d['prodi'] }}</td>
@@ -107,7 +107,7 @@
                                     </tbody>
                                 </table>
                                 <!-- End Primary Color Bordered Table -->
-
+                                {{ $data->links() }}
                             </div>
                         </div>
 

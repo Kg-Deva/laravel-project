@@ -9,7 +9,7 @@ class DataAnggotaController extends Controller
 {
     public function index()
     {
-        $data = DataAnggota::all();
+        $data = DataAnggota::paginate(5);
         return view('dataanggota', compact('data'));
     }
 
@@ -38,7 +38,6 @@ class DataAnggotaController extends Controller
     {
         $data = DataAnggota::findorfail($id);
         return view('editdataanggota', compact('data'));
-        // return view('admin.edit', ['No' => $data]);
     }
 
     public function update(Request $request, $id)
@@ -59,6 +58,5 @@ class DataAnggotaController extends Controller
         $data = DataAnggota::findorfail($id);
         $data->delete();
         return back();
-        // return redirect('data-user')->with('success', 'Data Berhasil Diupdate');
     }
 }

@@ -51,12 +51,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-                            {{-- <div class="d-flex justify-content-center py-4">
-                                <a href="/login" class="logo d-flex align-items-center w-auto">
-                                    <img src="assets/img/logo.png" alt="">
-                                    <span class="d-none d-lg-block">Admin My Perpus</span>
-                                </a>
-                            </div><!-- End Logo --> --}}
+
 
                             <div class="card mb-3">
 
@@ -74,13 +69,10 @@
                                     </div>
                                     <form class="row g-3" action="{{ route('postlogin') }}" method="POST">
                                         {{ csrf_field() }}
-                                        {{-- <form class="row g-3 needs-validation" id="formAuthentication" class="mb-3"
-                                            action="{{ route('postlogin') }}" method="POST">
-                                            {{ csrf_field() }} --}}
+
                                         <div class="col-12">
                                             <label for="yourUsername" class="form-label">Username</label>
                                             <div class="input-group has-validation">
-                                                {{-- <span class="input-group-text" id="inputGroupPrepend">@</span> --}}
                                                 <input type="text" name="name" class="form-control"
                                                     id="yourUsername" required>
                                                 <div class="invalid-feedback">Please enter your username.</div>
@@ -94,13 +86,6 @@
                                             <div class="invalid-feedback">Please enter your password!</div>
                                         </div>
 
-                                        {{-- <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="remember"
-                                                    value="true" id="rememberMe">
-                                                <label class="form-check-label" for="rememberMe">Remember me</label>
-                                            </div>
-                                        </div> --}}
                                         <div class="col-12">
                                             <button class="btn btn-primary w-100" type="submit">Login</button>
                                         </div>
